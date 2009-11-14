@@ -1,0 +1,37 @@
+{% extends 'answrs/base.html' %}
+
+{% block content %}
+<div id="mainpageblurb">
+    <div class="col1">
+        <img src="/site_media/answrs/ask.png" alt="ask" />
+        <br />
+            <h3>Ask</h3>
+    </div>
+    <div class="col1">
+        <img src="/site_media/answrs/answer.png" alt="ask" />
+        <br />
+            <h3>Answer</h3>
+    </div>
+    <div class="col1">
+        <img src="/site_media/answrs/share.png" alt="ask" />
+        <br />
+            <h3>Share</h3>
+    </div>
+    <p>
+        Answrs allows you to tap into the collective intelligence of the world. Convesly, it allows the world's intellegence to flood you as well. Whether this is a good thing remains to be seen.
+    </p>
+    <p>
+        {% if user.is_authenticated %}
+            <ul>
+                <li> <a href="{% url answrs_ask %}">Ask a question</a></li>
+                <li> <a href="{% url answrs_self_profile %}">See your profile</a></li>
+                <li> <a href="{% url answrs_random %}">See a random page</a></li>
+            </ul>
+        {% else %}You haven't logged in yet! Why not
+            <ul>
+                <li> <a href="{% url auth_login %}">Login</a> or </li>
+                <li> <a href="{% url registration_register %}">Register</a> It only takes 10 seconds, promise!</li>
+            </ul>
+        {% endif %}
+</div>
+{% endblock %}

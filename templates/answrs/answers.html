@@ -1,0 +1,28 @@
+{% extends 'answrs/base.html' %}
+
+{% block content %}
+<p class="question">
+<h2>{{question.title}}</h2>
+<div class="rightdiv">
+    Asked by {{question.user.username}}
+    on {{question.created_on|date}}
+</div>
+<blockquote>
+<br />
+{{question.description}}
+</blockquote>
+</p>
+<form method="post" action=".">
+    {{form.as_p}}
+    <input type="submit" value="Answer" name=ask"" />
+</for>
+{% for answer in answers %}
+    <p>
+        {{answer.text}}
+    </p>
+    <p class="postmetadata">
+       Answered by {{answer.user.username}} on {{answer.created_on|date}}
+    </p>
+{% endfor %}
+
+{% endblock %}
