@@ -1,57 +1,57 @@
+{% load i18n %}
+{% load staticfiles %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Surreal | A free css template by Rambling Soul
-{% block title %}
-{% endblock %}
-
-</title>
-<link href="{{MEDIA_URL}}/answrs/style.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Surreal | A free css template by Rambling Soul
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <style >
+        body {
+  padding-top: 60px;
+  padding-left: 20px;
+}
+    </style>
 </head>
-
 <body>
-<div id="wrap">
-<div id="header">
-{% block header %}
-<h1 id="sitename"><a href="#">Surreal</a></h1>
-{% endblock %}
-</div>
-<div id="page">
-<div id="menu">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            {# <a class="brand" href="/polls">Polls</a> #}
+            <div class="nav-collapse collapse">
+                <a class= "brand" href="{% url 'answrs_index' %}">Home</a>
+                    <ul class="nav pull-left ">
+                      <li ><a href="{% url 'answrs_ask' %}">Ask a question</a> </li>
+                    </ul>
+            </div>
+        </div>
+    </div>        
+    </div>
 
-<div id="sidemenu">
-{% block sidebar %}
-<h2>Menu</h2>
-<ul>
-<li ><a href="{% url 'answrs_index' %}">Home</a> </li>
-<li ><a href="{% url 'answrs_ask' %}">Ask a question</a> </li>
-{% if user.is_authenticated %}
-<li ><a href="{% url 'auth_logout' %}">Logout</a> </li>
-{% else %}
+    <div id="content">
+    {% block content %}
+        <h2>About Surrealism <span class="seo">Extract from Wikipedia</span></h2>
+        <blockquote><p>Surrealism is based on the belief in the superior reality of certain forms of previously neglected associations, in the omnipotence of dream, in the disinterested play of thought. It tends to ruin once and for all other psychic mechanisms and to substitute itself for them in solving all the principal problems of life.
+        <cite>Encyclopedia</cite>
+        </p>
 
-{% endif %}
-</ul>
-{% endblock %}
-</div>
-</div>
+        </blockquote>
 
-<div id="content">
-{% block content %}
-<h2>About Surrealism <span class="seo">Extract from Wikipedia</span></h2>
-<blockquote><p>Surrealism is based on the belief in the superior reality of certain forms of previously neglected associations, in the omnipotence of dream, in the disinterested play of thought. It tends to ruin once and for all other psychic mechanisms and to substitute itself for them in solving all the principal problems of life.
-<cite>Encyclopedia</cite>
-</p>
+        <img class="alignright" src="images/imagesample1.jpg" alt="Surreal Template Image" />
+        <p>
+        There are two forms of Surrealism, automatism and verism. Automatism deals with the suppression of the consciousness, to use the subconscious. There is more of a focus on feeling, and automatism is unburdened with meaning. It has been described as &quot;dictation of thoughts without control of the mind&quot;. Automatist paintings often have biomorphic (ameba-like) shapes, and give off a dreamlike feeling. Yves Tanguy's paintings are a perfect example of this form, like such as Multiplication of the Arcs.</p>
+        <p>The veristic branch of Surrealism allows the subconscious to surface in order to interpret meaning. It uses images as a link between abstract spiritual realities and real forms of the natural world. In other words, veristic paintings are much closer to reality than automatist paintings. They hold some truth, portraying recognizable scenes and objects that are taken out of natural context, resulting in a dreamscape. Salvador Dali is the most well known artist who portrays identifiable objects in strange settings. His &quot;hand painted dream photographs&quot; are so meticulously detailed, they almost look real, although they are so fantastic and dreamlike. He drew upon the terrors of his childhood to put his nightmares on canvas. Another veristic artist is Rene Magritte (The Human Condition, Portrait, and Time Transfixed are good examples of veristic Surrealism). The Human Condition I and II portray a canvas which lines up perfectly with the landscape behind it. Reality and the painting are so close, it makes you question the difference. <a href="http://en.wikipedia.org/wiki/Surrealism">More &raquo;</a></p>
 
-</blockquote>
-
-<img class="alignright" src="images/imagesample1.jpg" alt="Surreal Template Image" />
-<p>
-There are two forms of Surrealism, automatism and verism. Automatism deals with the suppression of the consciousness, to use the subconscious. There is more of a focus on feeling, and automatism is unburdened with meaning. It has been described as &quot;dictation of thoughts without control of the mind&quot;. Automatist paintings often have biomorphic (ameba-like) shapes, and give off a dreamlike feeling. Yves Tanguy's paintings are a perfect example of this form, like such as Multiplication of the Arcs.</p>
-<p>The veristic branch of Surrealism allows the subconscious to surface in order to interpret meaning. It uses images as a link between abstract spiritual realities and real forms of the natural world. In other words, veristic paintings are much closer to reality than automatist paintings. They hold some truth, portraying recognizable scenes and objects that are taken out of natural context, resulting in a dreamscape. Salvador Dali is the most well known artist who portrays identifiable objects in strange settings. His &quot;hand painted dream photographs&quot; are so meticulously detailed, they almost look real, although they are so fantastic and dreamlike. He drew upon the terrors of his childhood to put his nightmares on canvas. Another veristic artist is Rene Magritte (The Human Condition, Portrait, and Time Transfixed are good examples of veristic Surrealism). The Human Condition I and II portray a canvas which lines up perfectly with the landscape behind it. Reality and the painting are so close, it makes you question the difference. <a href="http://en.wikipedia.org/wiki/Surrealism">More &raquo;</a></p>
-
-{% endblock %}
-</div>
+    {% endblock %}
+    </div>
 
 <div class="clear"></div>
 
