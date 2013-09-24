@@ -24,13 +24,13 @@
 {% block sidebar %}
 <h2>Menu</h2>
 <ul>
-<li ><a href="{% url answrs_index %}">Home</a> </li>
-<li ><a href="{% url answrs_ask %}">Ask a question</a> </li>
+<li ><a href="{% url 'answrs_index' %}">Home</a> </li>
+<li ><a href="{% url 'answrs_ask' %}">Ask a question</a> </li>
 {% if user.is_authenticated %}
-<li ><a href="{% url auth_logout %}">Logout</a> </li>
+<li ><a href="{% url 'auth_logout' %}">Logout</a> </li>
 {% else %}
-<li ><a href="{% url auth_login %}">Login</a> </li>
-<li ><a href="{% url registration_register %}">Register</a> </li>
+<li ><a href="{% url 'auth_login' %}">Login</a> </li>
+<li ><a href="{% url 'registration_register' %}">Register</a> </li>
 {% endif %}
 </ul>
 {% endblock %}

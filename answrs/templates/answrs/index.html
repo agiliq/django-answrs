@@ -23,14 +23,14 @@
     <p>
         {% if user.is_authenticated %}
             <ul>
-                <li> <a href="{% url answrs_ask %}">Ask a question</a></li>
-                <li> <a href="{% url answrs_self_profile %}">See your profile</a></li>
-                <li> <a href="{% url answrs_random %}">See a random page</a></li>
+                <li> <a href="{% url 'answrs_ask' %}">Ask a question</a></li>
+                <li> <a href="{% url 'answrs_self_profile' %}">See your profile</a></li>
+                <li> <a href="{% url 'answrs_random' %}">See a random page</a></li>
             </ul>
         {% else %}You haven't logged in yet! Why not
             <ul>
-                <li> <a href="{% url auth_login %}">Login</a> or </li>
-                <li> <a href="{% url registration_register %}">Register</a> It only takes 10 seconds, promise!</li>
+                <li> <a href="{% url 'auth_login' %}">Login</a> or </li>
+                <li> <a href="{% url 'registration_register' %}">Register</a> It only takes 10 seconds, promise!</li>
             </ul>
         {% endif %}
 </div>
