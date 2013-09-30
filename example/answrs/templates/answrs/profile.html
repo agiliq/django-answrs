@@ -1,0 +1,14 @@
+{% extends 'answrs/base.html' %}
+
+{% block content %}
+<h2>{{user.username}}</h2>
+
+<form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Change Picture</legend>
+    {{form.as_p}}
+    <input type="submit" value="Change picture" name="changepic" />
+    </fieldset>
+</form>
+{% endblock %}
