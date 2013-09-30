@@ -13,7 +13,7 @@ def index(request):
     return render(request, 'answrs/index.html', payload)
 
 @login_required
-def ask(request):
+def ask(request, cat_slug=None):
     """Ask a question"""
     if request.method == 'POST':
         form = aforms.QuestionForm(request.user, request.POST)

@@ -4,7 +4,7 @@
 <h2>{{user.username}}</h2>
 
 <form action="." method="post" enctype="multipart/form-data">
-    
+    {% csrf_token %}
     <fieldset>
         <legend>Change Picture</legend>
     {{form.as_p}}
