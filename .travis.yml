@@ -7,4 +7,4 @@ install:
 - pip install -r example/requirements.txt --use-mirrors
 
 script:
-- python example/manage.py test 
+- python example/manage.py test answrs
