@@ -10,7 +10,7 @@ install:
 
 # command to run tests
 script: 
-  -  coverage run --source="." manage.py test answrs
+  -  coverage run --source="." example/manage.py test answrs
 
 after_success:
   - coveralls  
